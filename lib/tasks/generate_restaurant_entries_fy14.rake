@@ -13,7 +13,8 @@ task :generate_restaurant_entries_fy14 => :environment do
                         facility_name: row[1],
                         facility_type: row[3],
                         address: row[7],
-                        number_of_employees: row[14])
+                        number_of_employees: row[14],
+                        view_count:0)
     end
   end
 
