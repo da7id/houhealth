@@ -1,9 +1,17 @@
 <% provide :title, @restaurant.facility_name.titleize %>
+<section class="col-md-8">
 <h1><%= @restaurant.facility_name.titleize %></h2>
 <h2>
   <%= @restaurant.address.titleize.split(',')[0] %>
   <small> - Houston, TX <%= @restaurant.address.titleize.split(' ')[-1] %></small>
 </h2>
+<h3>
+  Views: <%= @restaurant.view_count %>
+</h3>
+</section>
+<section class="col-md-4">
+<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCHoa0uZVN9B8GS5Dfnfx3ba8Ou9W8QnZY&q=<%= @restaurant.address %>" allowfullscreen></iframe>
+</section>
 <hr>
 <dl class="dl-horizontal">
   <% @restaurant.violations.group_by(&:date).each do |date, violations| %>
